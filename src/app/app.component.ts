@@ -6,12 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['../../node_modules/bootstrap/dist/css/bootstrap.min.css','./app.component.css']
 })
 export class AppComponent {
-  task = {};
+  task = {
+    status: ''
+  };
   myTasks = [];
 
   addTask () {
     this.task.status = 'pending'
     this.myTasks.push(this.task);
-    this.task = {}
+    this.clearForm();
+  }
+
+  clearForm () {
+    this.task = {
+      status: ''
+    };
   }
 }
